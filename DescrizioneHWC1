@@ -1,0 +1,15 @@
+NOME e COGNOME: DAVINDER KUMAR
+MATRICOLA: 460825
+
+Descrizione della soluzione proposta per HWC1:
+
+La soluzione del problema dei produttori e consumatori risulta funzionante. 
+Per garantire l'acceso al buffer in mutua esclusione si è fatto l'utilizzo di "pthread_mutex_t USO_T" (per i consumatori) e "pthread_mutex_t USO_D" (per i produttori).
+Per assicurarsi la disponibilità di celle piene di interesse per i consumatori e di celle vuote di interesse per i produttori si è fatto l'utilizzo di "pthread_cond_t non_vuoto" e "pthread_cond_t non_pieno".
+La creazione di un thread richiede 4 parametri, il 3° e il 4° parametro sono rispettivamente il metodo da eseguire e l'argomento.
+Nella classe "produttoreConsumatore.c" sono implementati i metodi e nella corrispondente classe header è definito l'argomento del thread.
+Questi metodi hanno lo scopo di effettuare delle operazioni sul buffer e quindi a loro volta invocano i metodi definiti nella classe "operazioniBuffer.c".
+Per testare che il consumatore e il produttore effettuino la wait ho introdotto delle sleep che successivamente sono state rimosse.
+Sono stati implementatati tutti i scenari di test.
+Per i scenari 1,2,8,9 i test riguardano entrambe le modalità di funzionamento ovvero bloccante e non_bloccante.
+Per gli altri scenari invece la modalità è o solo bloccanti (4,5,6,11,12,13,14) o solo non_bloccanti (7) o mista (3,10).
